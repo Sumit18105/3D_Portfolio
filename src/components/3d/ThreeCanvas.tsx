@@ -114,9 +114,15 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
       .to(camera.position, { x: -10, y: 2, z: 5 }, 'experience')
       .to(camera.rotation, { y: -1.5, x: 0 }, 'experience')
       .to(saturn.rotation, { y: 7 }, 'experience')
+      .to(camera.position, { x: 10, y: 0, z: 8 }, 'patents')
+      .to(camera.rotation, { x: 0, y: 1.5 }, 'patents')
+      .to(saturn.rotation, { y: 8 }, 'patents')
+      .to(camera.position, { x: -5, y: -5, z: 9 }, 'certifications')
+      .to(camera.rotation, { x: 0.5, y: -0.5 }, 'certifications')
+      .to(saturn.rotation, { y: 9 }, 'certifications')
       .to(camera.position, { x: 0, y: 0, z: 12 }, 'contact')
       .to(camera.rotation, { x: 0, y: 0, z: 0 }, 'contact')
-      .to(saturn.rotation, { y: 8.5 }, 'contact');
+      .to(saturn.rotation, { y: 10 }, 'contact');
       
 
     const clock = new THREE.Clock();

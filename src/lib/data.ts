@@ -1,83 +1,82 @@
-import { Code, Bot, LineChart, Layers, BrainCircuit, Database, Cloud, Briefcase, GraduationCap, Award, Mail, Github, Linkedin } from 'lucide-react';
+import { Code, LineChart, Layers, BrainCircuit, Briefcase, GraduationCap, Award, Mail, Github, Linkedin, Database, GitBranch, Terminal, ShieldCheck, Trophy, Star } from 'lucide-react';
 
 export const personalInfo = {
   name: "Sumit Pathak",
-  role: "AI & ML Student | Product Thinker | Full-Stack Developer | Data Analyst",
-  profile: "A student building data-driven, user-centric digital products with AI, MERN stack, and analytics.",
-  about: "As a passionate student of AI and Machine Learning, I'm driven by the challenge of creating intelligent, data-driven products. My background in full-stack development and a keen eye for product has given me a holistic view of the digital landscape. I thrive on translating complex user needs into functional, elegant, and impactful digital systems, from neural networks to user-friendly web applications."
+  role: "AI & ML Student | Full-Stack Developer | Data Analyst",
+  about: "Innovative B.Tech AI & ML student with hands-on experience in full-stack development, frontend projects, and managing digital training programs. Skilled in Python, JavaScript, SQL, Tableau and R. Patent-holder in VR health monitoring and USB security systems. Passionate about leveraging technology and data-driven insights to deliver impactful digital solutions, with a strong willingness to learn ERP and SAP.",
+  email: "sumitpathak18105@gmail.com",
+  phone: "+919608794549",
+  address: "Bijaipur, Gopalganj, Bihar",
 };
 
 export const skills = [
   {
-    category: "AI & Machine Learning",
-    icon: BrainCircuit,
-    items: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "NLP", "Computer Vision"],
-  },
-  {
-    category: "Data Analysis",
+    category: "Data Analysis & Visualization",
     icon: LineChart,
-    items: ["SQL", "Tableau", "R", "Pandas", "NumPy", "Power BI"],
+    items: ["Tableau", "R", "SQL", "Python"],
   },
   {
-    category: "Product Management",
-    icon: Layers,
-    items: ["UX Thinking", "Agile", "JIRA", "Figma", "Market Research", "Analytics"],
+    category: "Databases",
+    icon: Database,
+    items: ["MySQL", "MongoDB"],
   },
   {
-    category: "Web Development",
+    category: "Programming Languages",
     icon: Code,
-    items: ["React", "Node.js", "Express", "MongoDB", "Django", "JavaScript"],
+    items: ["Python", "C++", "JavaScript", "HTML/CSS"],
+  },
+  {
+    category: "Frameworks & Libraries",
+    icon: Layers,
+    items: ["Django", "Django Rest Framework", "OpenCV"],
+  },
+  {
+    category: "Tools & Platforms",
+    icon: Terminal,
+    items: ["Git", "GitHub", "Postman", "Linux", "VS Code"],
+  },
+  {
+    category: "Interpersonal Skills",
+    icon: BrainCircuit,
+    items: ["Problem-Solving", "Decision-Making", "Analytical Thinking", "Documentation", "Management", "Team Leadership"],
   },
 ];
 
 export const projects = [
   {
     id: "mental-health",
-    title: "Mental Health Support System",
-    description: "A comprehensive platform using the MERN stack to connect users with mental health resources and professionals.",
-    tech: ["MERN Stack", "Socket.io", "JWT"],
-    impact: "Provided a safe and accessible space for users to seek mental health support.",
+    title: "Mental and Psychological Support System",
+    description: "Built a mental health support system with counseling, meditation, yoga, and quizzes. Used MERN stack to develop a secure, role-based wellness platform.",
+    tech: ["MERN", "Counseling", "Meditation", "Yoga", "Quizzes"],
     image: "placeholder-mental-health",
   },
   {
     id: "job-portal",
     title: "Job Portal",
-    description: "A full-featured job portal built with the MERN stack, allowing companies to post jobs and candidates to apply.",
-    tech: ["MERN Stack", "REST APIs", "Node.js"],
-    impact: "Streamlined the hiring process for both employers and job seekers.",
+    description: "Built a full-stack Job Portal using MERN with secure login and role-based access. Integrated RESTful APIs and MongoDB for job and user management.",
+    tech: ["MongoDB", "Express", "React", "Node"],
     image: "placeholder-job-portal",
   },
   {
     id: "fire-detection",
-    title: "Fire Detection System",
-    description: "A computer vision project that uses deep learning to detect fire in real-time from video streams.",
-    tech: ["Computer Vision", "Python", "OpenCV", "TensorFlow"],
-    impact: "Enhanced safety by providing early fire warnings.",
+    title: "Fire Detection using computer vision",
+    description: "Developed a real-time Fire Detection system using OpenCV and YOLOv8 for accurate flame localization. Trained custom models on Roboflow datasets to improve detection accuracy and reduce false alarms.",
+    tech: ["Python", "OpenCV", "NumPy", "YOLOv8", "Roboflow", "PyTorch"],
     image: "placeholder-fire-detection",
   },
   {
-    id: "ocr-translation",
-    title: "OCR & Translation App",
-    description: "An application that performs Optical Character Recognition (OCR) on images and translates the extracted text.",
-    tech: ["OCR", "Tesseract.js", "React"],
-    impact: "Made information more accessible by breaking language barriers.",
-    image: "placeholder-ocr-app",
-  },
-  {
     id: "portfolio",
-    title: "3D Portfolio Website",
-    description: "This very portfolio, built with Next.js and Three.js to create an immersive 3D experience.",
-    tech: ["Next.js", "Three.js", "GSAP", "Tailwind CSS"],
-    impact: "Showcases my skills and projects in an innovative and engaging way.",
+    title: "Personal Portfolio Website",
+    description: "Built a responsive portfolio website scoring 92/100 (mobile) and 97/100 (desktop) on PageSpeed Insights. Optimized performance with a 1.02-second load time and interactive JavaScript-based navigation.",
+    tech: ["HTML", "CSS", "JavaScript"],
     image: "placeholder-portfolio",
   },
   {
-    id: "sudoku-wizard",
-    title: "Sudoku Wizard",
-    description: "A web-based Sudoku solver that uses a backtracking algorithm to solve any valid puzzle.",
-    tech: ["JavaScript", "HTML/CSS", "Algorithm"],
-    impact: "A fun project demonstrating algorithmic problem-solving skills.",
-    image: "placeholder-sudoku",
+    id: "ocr-translation",
+    title: "Optical Character Recognition (OCR) and Translation Application",
+    description: "Created a Python tool achieving 95% text extraction accuracy from images and scanned documents. Integrated multilingual translation and text-to-speech features supporting 10+ languages.",
+    tech: ["Python", "OpenCV", "Tesseract", "Googletrans"],
+    image: "placeholder-ocr-app",
   },
 ];
 
@@ -85,49 +84,77 @@ export const experience = [
   {
     type: "Education",
     icon: GraduationCap,
-    title: "AI & ML Degree",
-    institution: "University of Technology",
-    date: "2021 - Present",
-    description: "Pursuing a specialized degree in Artificial Intelligence and Machine Learning, focusing on deep learning, data science, and intelligent systems.",
+    title: "Bachelor of Technology in AI & ML",
+    institution: "Chandigarh Engineering College",
+    date: "2023 – 2027",
+    description: "Currently pursuing a B.Tech in Artificial Intelligence & Machine Learning in Mohali, Punjab, India.",
+  },
+  {
+    type: "Education",
+    icon: GraduationCap,
+    title: "Senior Secondary",
+    institution: "Mukularanyam English School",
+    date: "2021 – 2022",
+    description: "Completed senior secondary education in Varanasi, India.",
   },
   {
     type: "Job",
     icon: Briefcase,
     title: "Operations Manager",
     institution: "Makes360",
-    date: "2020 - 2021",
-    description: "Managed cross-functional teams, streamlined operational workflows, and improved process efficiency by 25% using data-driven strategies.",
+    date: "09/2024 - 10/2024",
+    description: "Managed daily operations of a digital training program and coordinated activities for participants in Mohali, India.",
   },
   {
     type: "Internship",
     icon: Briefcase,
-    title: "Frontend Internship",
+    title: "Front End Development Intern",
     institution: "IBM SkillsBuild",
-    date: "Summer 2020",
-    description: "Developed and maintained user-facing features for enterprise applications, gaining hands-on experience with modern frontend frameworks and agile development methodologies.",
-  },
-  {
-    type: "Patent",
-    icon: Award,
-    title: "VR Health Monitoring System",
-    institution: "Patent Office",
-    date: "Published 2023",
-    description: "Co-authored a patent for a system that uses Virtual Reality to monitor and guide users through physical therapy exercises, tracking progress with integrated sensors.",
-  },
-  {
-    type: "Patent",
-    icon: Award,
-    title: "USB Security Protocol",
-    institution: "Patent Office",
-    date: "Published 2022",
-    description: "A novel security protocol to prevent data breaches through unauthorized USB device access, utilizing hardware and software-level authentications.",
+    date: "06/2024 - 07/2024",
+    description: "Learned and practiced frontend development concepts through hands-on tasks and guided training in a virtual setting.",
   },
 ];
 
+export const patents = [
+    {
+        icon: ShieldCheck,
+        title: "Integrated Virtual Reality Headset For Real-Time Health Monitoring And Adaptive Environment Control",
+        appNo: "App. No. 202511044089",
+        description: [
+            "Invented a VR headset with embedded BioVision SiP sensor combining ECG, PPG, and skin-temperature monitoring for real-time health tracking.",
+            "Developed adaptive VR environment control that adjusts visuals and interactions based on heart rate, SpO₂, stress, fatigue, and anxiety levels."
+        ],
+    },
+    {
+        icon: ShieldCheck,
+        title: "USB Bus Tracking System with Integrated Multi-Node Verification",
+        appNo: "App. No. 202511015897",
+        description: [
+            "Designed a secure USB authentication framework using multi-node verification (password, biometric, OTP/hardware checks) to prevent unauthorized data access.",
+            "Implemented tamper-detection and smart access control, enhancing security against data theft and device misuse."
+        ]
+    }
+];
+
+export const certifications = [
+    { name: "Front End Development", issuer: "Edunet - IBM SkillsBuild" },
+    { name: "Artificial Intelligence Foundation", issuer: "Infosys Springboard" },
+    { name: "Python for Software Engineering", issuer: "Chegg" },
+    { name: "Full Stack Developer Bootcamp", issuer: "GeeksforGeeks" },
+    { name: "AWS Academy Cloud Security Foundations", issuer: "AWS Academy" },
+    { name: "AWS Academy Data Engineering", issuer: "AWS Academy" },
+];
+
+export const honors = [
+    { title: "Certificate of Appreciation - OPERATIONS MANAGER", issuer: "Makes360" },
+    { title: "1st Position - Inter-college esports competition", issuer: "" },
+    { title: "2nd Position - Tech Hunt Technical Riddle", issuer: "" },
+];
+
 export const contact = {
-  email: "sumit@example.com",
+  email: "sumitpathak18105@gmail.com",
   links: [
-    { name: "GitHub", url: "https://github.com", icon: Github },
-    { name: "LinkedIn", url: "https://linkedin.com", icon: Linkedin },
+    { name: "GitHub", url: "https://github.com/sumit-pathak-", icon: Github },
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/sumit-pathak-", icon: Linkedin },
   ]
 };

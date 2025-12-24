@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { ArrowDown, Download, Send } from 'lucide-react';
-import { personalInfo, skills, projects, experience, contact } from '@/lib/data';
+import { ArrowDown, Download, Send, Trophy, Star } from 'lucide-react';
+import { personalInfo, skills, projects, experience, patents, certifications, honors, contact } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Image from 'next/image';
 import {
@@ -63,7 +63,7 @@ export default function PortfolioPage() {
       {loading && <Loader />}
       <div ref={pageRef} className="relative opacity-0 transition-opacity duration-1000">
         <ThreeCanvas onLoad={handleCanvasLoad} />
-        <div className="scroll-container relative z-10 text-white" style={{ height: '600vh' }}>
+        <div className="scroll-container relative z-10 text-white" style={{ height: '900vh' }}>
           
           <section id="hero" className="h-screen flex flex-col items-center justify-center text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-glow-primary mb-4">{personalInfo.name}</h1>
@@ -140,7 +140,7 @@ export default function PortfolioPage() {
           
           <Section id="experience">
             <div className="text-center">
-                <h2 className="text-4xl font-bold text-glow-primary mb-12">Career & Education Timeline</h2>
+                <h2 className="text-4xl font-bold text-glow-primary mb-12">Career &amp; Education Timeline</h2>
                 <div className="relative">
                     <div className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-border/50"></div>
                     {experience.map((item, index) => (
@@ -161,6 +161,65 @@ export default function PortfolioPage() {
                 </div>
             </div>
           </Section>
+
+          <Section id="patents">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-glow-primary mb-12">Patents</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {patents.map((patent, index) => (
+                  <Card key={index} className="glass-card p-6 text-left">
+                    <CardHeader>
+                      <div className="flex items-center gap-4 mb-2">
+                        <patent.icon className="w-8 h-8 text-primary" />
+                        <CardTitle className="text-xl">{patent.title}</CardTitle>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{patent.appNo}</p>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="list-disc list-inside space-y-2 text-sm">
+                        {patent.description.map((point, i) => <li key={i}>{point}</li>)}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </Section>
+
+          <Section id="certifications">
+            <div className="text-center">
+              <h2 className="text-4xl font-bold text-glow-primary mb-12">Certifications</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {certifications.map((cert, index) => (
+                  <Card key={index} className="glass-card p-4 flex items-center gap-4 hover:bg-primary/10 transition-colors">
+                    <Star className="w-6 h-6 text-accent neon-glow-accent" />
+                    <div>
+                        <h3 className="font-semibold">{cert.name}</h3>
+                        <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </Section>
+          
+          <Section id="honors">
+            <div className="text-center">
+                <h2 className="text-4xl font-bold text-glow-primary mb-12">Honors &amp; Awards</h2>
+                <div className="space-y-6">
+                    {honors.map((honor, index) => (
+                        <Card key={index} className="glass-card p-4 flex items-center gap-4 max-w-lg mx-auto hover:bg-primary/10 transition-colors">
+                            <Trophy className="w-6 h-6 text-accent neon-glow-accent" />
+                            <div>
+                                <h3 className="font-semibold">{honor.title}</h3>
+                                <p className="text-sm text-muted-foreground">{honor.issuer}</p>
+                            </div>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+          </Section>
+
 
           <Section id="contact">
             <Card className="glass-card max-w-2xl mx-auto p-8">
@@ -201,10 +260,6 @@ export default function PortfolioPage() {
             </DialogDescription>
           </DialogHeader>
           <div className="py-4 space-y-4">
-              <div>
-                  <h4 className="font-semibold mb-2">Impact</h4>
-                  <p className="text-sm">{selectedProject?.impact}</p>
-              </div>
               <div>
                   <h4 className="font-semibold mb-2">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
