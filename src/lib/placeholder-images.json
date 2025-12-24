@@ -3,61 +3,61 @@
     {
       "id": "placeholder-mental-health",
       "description": "Abstract visualization of a calm mind or network",
-      "imageUrl": "https://images.unsplash.com/photo-1754258167498-657ddff65fc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxoZWFsdGglMjBuZXR3b3JrfGVufDB8fHx8MTc2NjU5NDc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1574717462413-644c3c7e8d77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZWFsdGglMjBuZXR3b3JrfGVufDB8fHx8MTc2NjU5NDc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "health network"
     },
     {
       "id": "placeholder-job-portal",
       "description": "A user interface showing job listings",
-      "imageUrl": "https://images.unsplash.com/photo-1581431886211-6b932f8367f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbnRlcmZhY2UlMjBsaXN0fGVufDB8fHx8MTc2NjU5NDc1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbnRlcmZhY2UlMjBsaXN0fGVufDB8fHx8MTc2NjU5NDc1NHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "interface list"
     },
     {
       "id": "placeholder-fire-detection",
       "description": "Image of a fire with a detection bounding box",
-      "imageUrl": "https://images.unsplash.com/photo-1612466505848-c1c632fbfeba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmaXJlJTIwZGV0ZWN0aW9ufGVufDB8fHx8MTc2NjU5NDU3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1552912439-e33b092305e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmaXJlJTIwZGV0ZWN0aW9ufGVufDB8fHx8MTc2NjU5NDU3MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fire detection"
     },
     {
       "id": "placeholder-ocr-app",
       "description": "A mobile app UI showing text being scanned from a document",
-      "imageUrl": "https://images.unsplash.com/photo-1579642984417-0c00620f8e94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxhcHAlMjBkb2N1bWVudHxlbnwwfHx8fDE3NjY1OTQ3NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1555774698-0b77e0abfe79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcHAlMjBkb2N1bWVudHxlbnwwfHx8fDE3NjY1OTQ3NTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "app document"
     },
     {
       "id": "placeholder-portfolio",
       "description": "Abstract 3D geometric shapes and lines",
-      "imageUrl": "https://images.unsplash.com/photo-1653299832314-5d3dc1e5a83c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMDNkfGVufDB8fHx8MTc2NjQ2OTI5OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1699965380913-c23f12458a2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkfGVufDB8fHx8MTc2NjQ2OTI5OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract 3d"
     },
     {
       "id": "placeholder-sudoku",
       "description": "A Sudoku grid being solved",
-      "imageUrl": "https://images.unsplash.com/photo-1765196176394-e028da216775?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzdWRva3UlMjBncmlkfGVufDB8fHx8MTc2NjU5NDc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1589415511003-888f618b76ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdWRva3UlMjBncmlkfGVufDB8fHx8MTc2NjU5NDc1NXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "sudoku grid"
     },
     {
       "id": "screen-ai-model",
       "description": "A visualization of a neural network",
-      "imageUrl": "https://images.unsplash.com/photo-1644325349124-d1756b79dd42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc2NjU5NDc1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc2NjU5NDc1NHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "neural network"
     },
     {
       "id": "screen-data-charts",
       "description": "A dashboard with various data charts and graphs",
-      "imageUrl": "https://images.unsplash.com/photo-1758876202980-0a28b744fb24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkYXNoYm9hcmQlMjBjaGFydHN8ZW58MHx8fHwxNzY2NTAxNjE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBjaGFydHN8ZW58MHx8fHwxNzY2NTAxNjE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dashboard charts"
     },
     {
       "id": "screen-wireframes",
       "description": "Product wireframes for a mobile application",
-      "imageUrl": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhcHAlMjB3aXJlZnJhbWV8ZW58MHx8fHwxNzY2NTk0NzU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcHAlMjB3aXJlZnJhbWV8ZW58MHx8fHwxNzY2NTk0NzU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "app wireframe"
     },
     {
       "id": "screen-code",
       "description": "A screen displaying lines of code in a dark editor",
-      "imageUrl": "https://images.unsplash.com/photo-1625535163131-9d1fc30ea5f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2RlJTIwZWRpdG9yfGVufDB8fHx8MTc2NjUwMTYxNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2RlJTIwZWRpdG9yfGVufDB8fHx8MTc2NjUwMTYxNXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "code editor"
     }
   ]
