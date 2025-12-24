@@ -44,8 +44,8 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
         onLoad();
     });
     const textureLoader = new THREE.TextureLoader(loadingManager);
-    const saturnTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_atmos.jpg');
-    const ringTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_ring.png');
+    const saturnTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturnmap.jpg');
+    const ringTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturnring.png');
     
     // Planet
     const planetGeometry = new THREE.SphereGeometry(2, 64, 64);
@@ -59,13 +59,12 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
     scene.add(saturn);
 
     // Rings
-    const ringGeometry = new THREE.TorusGeometry(3.5, 0.8, 2, 100);
+    const ringGeometry = new THREE.RingGeometry(2.5, 4.5, 64);
     const ringMaterial = new THREE.MeshBasicMaterial({
         map: ringTexture,
-        color: 0xffffff,
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.9,
     });
     const rings = new THREE.Mesh(ringGeometry, ringMaterial);
     rings.rotation.x = Math.PI / 2;
@@ -129,7 +128,6 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
 
       // Slow continuous rotation
       saturn.rotation.y += 0.0005;
-      rings.rotation.z += 0.0001;
 
       particlesMesh.rotation.y = elapsedTime * 0.02;
 
