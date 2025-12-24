@@ -40,8 +40,11 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
     scene.add(accentLight);
 
     // Saturn Model
-    const textureLoader = new THREE.TextureLoader();
-    const saturnTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_atmos.jpg', onLoad);
+    const loadingManager = new THREE.LoadingManager(() => {
+        onLoad();
+    });
+    const textureLoader = new THREE.TextureLoader(loadingManager);
+    const saturnTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_atmos.jpg');
     const ringTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_ring.png');
     
     // Planet
@@ -149,7 +152,7 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (mountRef.current) {
+      if (mountRef.current && renderer.domElement.parentNode === mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
       }
       // Dispose Three.js objects to free memory
@@ -170,5 +173,3 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
 };
 
 export default ThreeCanvas;
-
-    

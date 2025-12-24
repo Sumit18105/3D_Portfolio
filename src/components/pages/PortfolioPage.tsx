@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ThreeCanvas from '@/components/3d/ThreeCanvas';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -37,6 +37,7 @@ export default function PortfolioPage() {
   const [loading, setLoading] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
+  const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -45,6 +46,13 @@ export default function PortfolioPage() {
   const handleProjectClick = (project: (typeof projects)[0]) => {
     setSelectedProject(project);
   };
+  
+  const handleCanvasLoad = () => {
+    setLoading(false);
+    if(pageRef.current) {
+        pageRef.current.style.opacity = '1';
+    }
+  }
 
   if (!isMounted) {
     return <Loader />;
@@ -53,8 +61,8 @@ export default function PortfolioPage() {
   return (
     <>
       {loading && <Loader />}
-      <div className="relative">
-        <ThreeCanvas onLoad={() => setLoading(false)} />
+      <div ref={pageRef} className="relative opacity-0 transition-opacity duration-1000">
+        <ThreeCanvas onLoad={handleCanvasLoad} />
         <div className="scroll-container relative z-10 text-white" style={{ height: '600vh' }}>
           
           <section id="hero" className="h-screen flex flex-col items-center justify-center text-center">
