@@ -4,21 +4,6 @@ import React, { useRef, useEffect, Suspense } from 'react';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-type HolographicScreen = {
-  position: [number, number, number];
-  rotation: [number, number, number];
-  textureId: string;
-};
-
-const screensData: HolographicScreen[] = [
-  { position: [-2.5, 1.5, -2], rotation: [0, Math.PI / 4, 0], textureId: 'screen-ai-model' },
-  { position: [2.5, 1.5, -2], rotation: [0, -Math.PI / 4, 0], textureId: 'screen-data-charts' },
-  { position: [-2.5, -0.5, -2], rotation: [0, Math.PI / 4, 0], textureId: 'screen-wireframes' },
-  { position: [2.5, -0.5, -2], rotation: [0, -Math.PI / 4, 0], textureId: 'screen-code' },
-];
-
 
 const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -46,46 +31,43 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
     const ambientLight = new THREE.AmbientLight(0x404040, 2);
     scene.add(ambientLight);
 
-    const primaryLight = new THREE.PointLight(0x6F00FF, 50, 20);
-    primaryLight.position.set(0, 2, 0);
+    const primaryLight = new THREE.PointLight(0x6F00FF, 150, 40);
+    primaryLight.position.set(0, 5, 5);
     scene.add(primaryLight);
 
-    const accentLight = new THREE.PointLight(0x00FFFF, 50, 20);
-    accentLight.position.set(5, 1, -5);
+    const accentLight = new THREE.PointLight(0x00FFFF, 100, 40);
+    accentLight.position.set(10, -5, -10);
     scene.add(accentLight);
 
-    // Desk Platform
-    const deskGeometry = new THREE.CylinderGeometry(2, 2, 0.1, 64);
-    const deskMaterial = new THREE.MeshStandardMaterial({ 
-        color: 0x111111, 
-        metalness: 0.8,
-        roughness: 0.4,
-        emissive: 0x6F00FF,
-        emissiveIntensity: 0.2
-    });
-    const desk = new THREE.Mesh(deskGeometry, deskMaterial);
-    desk.position.y = -1;
-    scene.add(desk);
-
-    // Holographic Screens
+    // Saturn Model
     const textureLoader = new THREE.TextureLoader();
-    const screens: THREE.Mesh[] = screensData.map(data => {
-      const placeholder = PlaceHolderImages.find(p => p.id === data.textureId);
-      const texture = textureLoader.load(placeholder?.imageUrl || '', onLoad);
-      const geometry = new THREE.PlaneGeometry(2, 1.5);
-      const material = new THREE.MeshBasicMaterial({ 
-        map: texture, 
-        side: THREE.DoubleSide, 
-        transparent: true,
-        opacity: 0.7,
-        blending: THREE.AdditiveBlending,
-      });
-      const screen = new THREE.Mesh(geometry, material);
-      screen.position.set(...data.position);
-      screen.rotation.set(...data.rotation);
-      scene.add(screen);
-      return screen;
+    const saturnTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_atmos.jpg', onLoad);
+    const ringTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/saturn_ring.png');
+    
+    // Planet
+    const planetGeometry = new THREE.SphereGeometry(2, 64, 64);
+    const planetMaterial = new THREE.MeshStandardMaterial({ 
+        map: saturnTexture,
+        metalness: 0.1,
+        roughness: 0.7
     });
+    const saturn = new THREE.Mesh(planetGeometry, planetMaterial);
+    saturn.rotation.x = 0.3;
+    scene.add(saturn);
+
+    // Rings
+    const ringGeometry = new THREE.TorusGeometry(3.5, 0.8, 2, 100);
+    const ringMaterial = new THREE.MeshBasicMaterial({
+        map: ringTexture,
+        color: 0xffffff,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.8,
+    });
+    const rings = new THREE.Mesh(ringGeometry, ringMaterial);
+    rings.rotation.x = Math.PI / 2;
+    rings.rotation.y = 0.1;
+    saturn.add(rings); // Add rings as a child of Saturn
 
     // Particles
     const particlesGeometry = new THREE.BufferGeometry();
@@ -115,27 +97,36 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
       },
     });
 
-    tl.to(camera.position, { z: 4, y: 1 }, 'start')
-      .to(camera.position, { x: 0, y: 15, z: 20 }, 'about')
-      .to(camera.rotation, { x: -Math.PI / 8, y: 0, z: 0 }, 'about')
-      .to(camera.position, { x: 15, y: 20, z: 15 }, 'skills')
-      .to(camera.rotation, { y: -Math.PI / 4 }, 'skills')
-      .to(camera.position, { x: 0, y: 30, z: -20 }, 'projects')
-      .to(camera.rotation, { y: Math.PI }, 'projects')
-      .to(camera.position, { x: -15, y: 40, z: 15 }, 'experience')
-      .to(camera.rotation, { y: Math.PI / 2 }, 'experience')
-      .to(camera.position, { x: 0, y: 50, z: 10 }, 'contact')
-      .to(camera.rotation, { x: 0, y: 0, z: 0 }, 'contact');
+    // Animate camera and planet
+    tl.to(camera.position, { z: 6, y: 1 }, 'start')
+      .to(saturn.rotation, { y: 1 }, 'start')
+      .to(camera.position, { x: -5, y: 3, z: 8 }, 'about')
+      .to(camera.rotation, { x: -0.2, y: -0.5, z: 0 }, 'about')
+      .to(saturn.rotation, { y: 2.5 }, 'about')
+      .to(camera.position, { x: 8, y: 4, z: 6 }, 'skills')
+      .to(camera.rotation, { y: 1, x: -0.5 }, 'skills')
+      .to(saturn.rotation, { y: 4 }, 'skills')
+      .to(camera.position, { x: 0, y: -6, z: 7 }, 'projects')
+      .to(camera.rotation, { x: 0.7, y: 0 }, 'projects')
+      .to(saturn.rotation, { y: 5.5 }, 'projects')
+      .to(camera.position, { x: -10, y: 2, z: 5 }, 'experience')
+      .to(camera.rotation, { y: -1.5, x: 0 }, 'experience')
+      .to(saturn.rotation, { y: 7 }, 'experience')
+      .to(camera.position, { x: 0, y: 0, z: 12 }, 'contact')
+      .to(camera.rotation, { x: 0, y: 0, z: 0 }, 'contact')
+      .to(saturn.rotation, { y: 8.5 }, 'contact');
       
 
     const clock = new THREE.Clock();
     const animate = () => {
       const elapsedTime = clock.getElapsedTime();
       
-      screens[0].position.y = 1.5 + Math.sin(elapsedTime * 0.5) * 0.1;
-      screens[1].position.y = 1.5 + Math.cos(elapsedTime * 0.5) * 0.1;
-      screens[2].position.y = -0.5 + Math.sin(elapsedTime * 0.4) * 0.1;
-      screens[3].position.y = -0.5 + Math.cos(elapsedTime * 0.4) * 0.1;
+      // Gentle bobbing motion
+      saturn.position.y = Math.sin(elapsedTime * 0.5) * 0.1;
+
+      // Slow continuous rotation
+      saturn.rotation.y += 0.0005;
+      rings.rotation.z += 0.0001;
 
       particlesMesh.rotation.y = elapsedTime * 0.02;
 
@@ -179,3 +170,5 @@ const ThreeCanvas = ({ onLoad }: { onLoad: () => void }) => {
 };
 
 export default ThreeCanvas;
+
+    
